@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography, makeStyles, Button, Box } from '@material-ui/core'; 
 import { Link, useLocation } from 'react-router-dom';
+import React, { Component }  from 'react';
 
 
 const useStyle = makeStyles((theme) => ({
