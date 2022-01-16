@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from'../header/Header'
 import { Typography, makeStyles, Box, Card, CardMedia, CardContent, Button} from '@material-ui/core'; 
-import homepage from '/Users/shelabhtyagi/Desktop/car wash/car-wash/src/components/images/homepage.webp'
-import card1 from '/Users/shelabhtyagi/Desktop/car wash/car-wash/src/components/images/card1.webp'
-import card2 from '/Users/shelabhtyagi/Desktop/car wash/car-wash/src/components/images/card2.png'
-import card3 from '/Users/shelabhtyagi/Desktop/car wash/car-wash/src/components/images/card3.webp'
+import homepage from '../images/homepage.webp'
+import card1 from '../images/card1.webp'
+import card2 from '../images/card2.png'
+import card3 from '../images/card3.webp'
 
 
 

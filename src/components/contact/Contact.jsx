@@ -1,8 +1,8 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography, makeStyles, Button, Box, Card, CardContent, TextField,} from '@material-ui/core'; 
 import Header from '../header/Header'
-import contact from '/Users/shelabhtyagi/Desktop/car wash/car-wash/src/components/images/contact.png'
-import contact2 from '/Users/shelabhtyagi/Desktop/car wash/car-wash/src/components/images/contact2.png'
+import contact from '../images/contact.png'
+import contact2 from '../images/contact2.png'
 
 
 

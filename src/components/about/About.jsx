@@ -1,7 +1,7 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography, makeStyles, Button, Box, Card, CardContent} from '@material-ui/core'; 
 import Header from '../header/Header'
-import about from '/Users/shelabhtyagi/Desktop/car wash/car-wash/src/components/images/about.webp'
+import about from '../images/about.webp'
 
 
 const useStyle = makeStyles((theme) => ({

@@ -1,6 +1,6 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography, makeStyles, Button, Box, Card, CardContent, TextField, Checkbox} from '@material-ui/core'; 
-import login from '/Users/shelabhtyagi/Desktop/car wash/car-wash/src/components/images/login.png'
+import login from '../images/login.png'
 import { Link, useLocation } from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => ({
