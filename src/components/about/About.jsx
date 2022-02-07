@@ -2,9 +2,13 @@ import React from 'react'
 import { AppBar, Toolbar, Typography, makeStyles, Button, Box, Card, CardContent} from '@material-ui/core'; 
 import Header from '../header/Header'
 import about from '../images/about.webp'
-
+import { motion } from "framer-motion"
 
 const useStyle = makeStyles((theme) => ({
+
+	mmmc:{
+		overflow: 'hidden',
+	},
 	title: {
 		fontSize: '490%',
 		fontWeight: 'bold',
@@ -148,6 +152,7 @@ function About() {
 	const classes = useStyle();
 	return (
 		<div>	
+			<div className={classes.mmmc}>
 			<Header />
 			<Typography className={classes.title}>
 				LET'S GET TO KNOW EACH OTHER
@@ -170,9 +175,17 @@ function About() {
 			<Typography className={classes.join}>
 				Join Us
 			</Typography>
-			<img className={classes.img} src={
-					about}
-			/>
+
+
+			<motion.div
+			  animate={{ x: 100 }}
+			  transition={{ ease: "easeOut", duration: 2 }}
+			>
+			<img className={classes.img} src={about}/>
+			</motion.div>
+
+
+
 			<div className={classes.box}>
 				<Typography className={classes.title1} style={{ zIndex: '1'}}>
 					Meet the minds behind Car Wash
@@ -182,11 +195,15 @@ function About() {
 					<path d="M16.3671 0.37593C9.31224 1.8217 2.81072 7.28739 0.770351 14.4457C-0.474622 18.8888 -0.267127 23.4729 1.80783 27.5986C2.08449 28.1628 2.39572 28.6918 2.70697 29.1855C3.4332 30.8075 4.43611 32.2886 5.61191 33.5933C8.8281 37.1548 12.8051 39.1648 17.5083 39.8348C24.8744 40.8574 32.9322 37.049 36.9437 30.737C38.742 27.916 39.8832 24.2487 39.987 20.8635C40.1599 15.8915 38.6037 11.6247 35.7333 7.67527C31.4797 1.71589 23.3874 -1.06984 16.3671 0.37593Z" fill="#DDE0B6"/>
 					</svg>
 				</div>
+
+				
+				
 				<div className={classes.v2}  style={{ zIndex: '0'}} position="absolute">
 					<svg width="203" height="177" viewBox="0 0 203 177" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M169.185 23.8319C146.285 8.80304 118.263 -1.68882 89.9391 0.225236C75.1747 1.21771 61.3896 5.75473 48.9604 13.2692C39.6949 18.8696 27.793 23.8319 20.1095 31.2755C13.6312 37.5848 9.63879 47.7931 6.62564 55.9456C-0.153936 73.9519 -2.03713 93.7305 2.40726 112.446C10.6181 146.899 38.791 173.27 76.4553 176.531C125.042 180.785 177.998 155.831 196.906 112.162C211.143 79.3397 199.844 43.8232 169.185 23.8319Z" fill="#EFCFD0"/>
 					</svg>
 				</div>
+				
 				<div className={classes.cards}>
 					<Card className={classes.card1}>
 						<CardContent>
@@ -225,6 +242,7 @@ function About() {
 				
 			</div>
 		
+			</div>
 		</div>
 	)
 }
