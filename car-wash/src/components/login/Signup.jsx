@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AppBar, Toolbar, Typography, makeStyles, Button, Box, Card, CardContent, TextField, Checkbox} from '@material-ui/core'; 
 import login from '../images/login.png'
 import { Link, useLocation } from 'react-router-dom';
@@ -164,16 +164,16 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const Signup = ({ setAuth }) => {
 
 	const classes = useStyle();
-	const [inputs, setInputs] = useState({
+	const [user, setUser] = useState({
 		name: "",
 		email: "",
 		password: "",
 		
 	});
-	    
+	const [error, setError] = useState("");
 	const { name, email, password } = inputs;
 	    
-	const onChange = e => setInputs({ ...inputs, [e.target.name]: e.target.value });
+	const onChange = e => setInputs({ ...inputs, [e.target.name]: e.target.value, [e.target.email]: e.target.value, [e.target.password]: e.target.value });
 	
 	const onSubmitForm = async e => {
 		e.preventDefault();
