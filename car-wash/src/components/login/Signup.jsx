@@ -180,7 +180,7 @@ const Signup = ({ setAuth }) => {
 		try {
 		  const body = { name, email, password };
 		  const response = await fetch(
-		    "http://localhost:3001/auth/signup",
+		    "http://localhost:3001/user/signup",
 		    {
 		      method: "POST",
 		      headers: {
