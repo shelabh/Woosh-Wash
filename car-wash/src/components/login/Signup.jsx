@@ -164,12 +164,7 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const Signup = ({ setAuth }) => {
 
 	const classes = useStyle();
-	const [user, setUser] = useState({
-		name: "",
-		email: "",
-		password: "",
-		
-	});
+	
 	const [error, setError] = useState("");
 	const { name, email, password } = inputs;
 	    
