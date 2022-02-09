@@ -165,40 +165,7 @@ const Signup = ({ setAuth }) => {
 
 	const classes = useStyle();
 	
-	const [error, setError] = useState("");
-	const { name, email, password } = inputs;
-	    
-	const onChange = e => setInputs({ ...inputs, [e.target.name]: e.target.value, [e.target.email]: e.target.value, [e.target.password]: e.target.value });
 	
-	const onSubmitForm = async e => {
-		e.preventDefault();
-		try {
-		  const body = { name, email, password };
-		  const response = await fetch(
-		    "http://localhost:3001/user/signup",
-		    {
-		      method: "POST",
-		      headers: {
-			"Content-type": "application/json"
-		      },
-		      body: JSON.stringify(body)
-		    }
-		  );
-		  const parseRes = await response.json();
-	    
-		  if (parseRes.jwtToken) {
-		    localStorage.setItem("token", parseRes.jwtToken);
-		    setAuth(true);
-		    toast.success("Register Successfully");
-		  } else {
-		    setAuth(false);
-		    toast.error(parseRes);
-		  }
-		} catch (err) {
-		  console.error(err.message);
-		}
-	};
-
 	
 	return (
 		<div>
@@ -236,10 +203,10 @@ const Signup = ({ setAuth }) => {
 			<Typography className={classes.subtitle}>
 				or use your email for registration
 			</Typography>
-			<Box className={classes.box} onSubmit={onSubmitForm}>
-				<TextField  label="Name" variant="outlined"  className={classes.name}  InputProps={{classes: {input: classes.input}}} onChange={e => onChange(e)} value={name}/>
-				<TextField  label="Email" variant="outlined"  className={classes.email}  InputProps={{classes: {input: classes.input}}} onChange={e => onChange(e)} value={email}/>
-				<TextField  label="Password" variant="outlined" className={classes.password}  InputProps={{classes: {input: classes.input}}} onChange={e => onChange(e)} value={password}/>
+			<Box className={classes.box} >
+				<TextField  label="Name" variant="outlined"  className={classes.name}  InputProps={{classes: {input: classes.input}}} />
+				<TextField  label="Email" variant="outlined"  className={classes.email}  InputProps={{classes: {input: classes.input}}} />
+				<TextField  label="Password" variant="outlined" className={classes.password}  InputProps={{classes: {input: classes.input}}} />
 			</Box>
 			<img className={classes.img} src={login} />
 			<div className={classes.box1}>
