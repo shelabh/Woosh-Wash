@@ -168,6 +168,7 @@ const Signup = ({ setAuth }) => {
 	
 	
 	return (
+		<>
 		<div>
 			<Typography className={classes.title}>
 				Create Account
@@ -227,6 +228,7 @@ const Signup = ({ setAuth }) => {
 
 
 		</div>
+		</>
 	)
 }
 
