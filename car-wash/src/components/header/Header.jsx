@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography, makeStyles, Button, Box } from '@material-ui/core'; 
 import { Link, useLocation } from 'react-router-dom';
-import React, { Component }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import { motion } from 'framer-motion';
 
 const item = {
@@ -70,7 +70,48 @@ const useStyle = makeStyles((theme) => ({
 
 
 export default function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [userInfo, setUserInfo] = useState({})
   const classes = useStyle();
+
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      setIsLoggedIn(false)
+    }
+    if (token) {
+      setIsLoggedIn(true)
+      setUserInfo(token)
+    }
+  }, [])
+
+  const logout = () => {
+    localStorage.removeItem('token')
+    setIsLoggedIn(false)
+  }
+
+  const displayButtons = () => {
+    if (!isLoggedIn) {
+      return (
+        <div className='header-container'>
+          <button className='btn'>
+            <Link to='/signin'>signin</Link>
+          </button>
+        </div>
+      )
+    }
+    if (isLoggedIn) {
+      return (
+        <div className='header-container'>
+          {userInfo ? <h3>ようこそ、{userInfo}さん</h3> : null}
+          <button className='btn' onClick={logout}>
+            logout
+          </button>
+        </div>
+      )
+    }
+  }
 
 
   return (
@@ -104,8 +145,9 @@ export default function Header() {
             <Typography component={Link} to={`/about`} style={{ textDecoration: 'none' }} color='inherit'>ABOUT US</Typography>
             <Typography component={Link} to={`/service`} style={{ textDecoration: 'none' }} color='inherit'>SERVICES</Typography>
             <Typography component={Link} to={`/contact`} style={{ textDecoration: 'none' }} color='inherit'>CONTACT US</Typography>
-            <Button component={Link} to={`/signup`} style={{ textDecoration: 'none' }} color='inherit' className={classes.btn1} variant="contained" >Sign Up</Button>
-          </div></motion.div>
+            <>{displayButtons()}</>
+          </div>
+          </motion.div>
         </Toolbar>
       </AppBar>
 

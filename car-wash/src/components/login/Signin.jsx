@@ -1,7 +1,7 @@
-import React from 'react'
-import { AppBar, Toolbar, Typography, makeStyles, Button, Box, Card, CardContent, TextField, Checkbox} from '@material-ui/core'; 
+import React, { useState } from 'react'
+import { Typography, makeStyles, Button, Box, TextField, Checkbox} from '@material-ui/core'; 
 import login from '../images/login.png'
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => ({
 	title: {
@@ -143,11 +143,15 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 function Signin() {
 	const classes = useStyle();
+	
+
 	return (
 		<div>
+			
 			<Typography className={classes.title}>
 				Welcome Back
 			</Typography>
+
 			<div className={classes.icons}>
 				<div className={classes.google}>
 					<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -179,9 +183,9 @@ function Signin() {
 			<Typography className={classes.subtitle}>
 				or use your email to login
 			</Typography>
-			<Box className={classes.box}>
-				<TextField  label="Email" variant="outlined"  className={classes.email}  InputProps={{classes: {input: classes.input}}}/>
-				<TextField  label="Message" variant="outlined" className={classes.password}  InputProps={{classes: {input: classes.input}}}/>
+			<Box className={classes.box}  >
+				<TextField  label="Email" variant="outlined"  className={classes.email} />
+				<TextField  label="Password" variant="outlined" className={classes.password}  />
 			</Box>
 			<img className={classes.img} src={login} />
 			<div className={classes.box1}>
@@ -191,7 +195,7 @@ function Signin() {
 				</Typography>
 			</div>
 			<div className={classes.buttons}>
-				<Button variant="contained" className={classes.signup} component={Link} to={`/`} style={{ textDecoration: 'none' }} color='inherit'>
+				<Button variant="contained" className={classes.signup}  style={{ textDecoration: 'none' }} color='inherit' type='submit'>
 					Sign In
 				</Button>
 				<Button variant="outlined" className={classes.signin} component={Link} to={`/signup`} style={{ textDecoration: 'none' }} color='inherit'>

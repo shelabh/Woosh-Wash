@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { AppBar, Toolbar, Typography, makeStyles, Button, Box, Card, CardContent, TextField, Checkbox} from '@material-ui/core'; 
+import { Typography, makeStyles, Button, Box, TextField, Checkbox} from '@material-ui/core'; 
 import login from '../images/login.png'
 import { Link, useLocation } from 'react-router-dom';
-import { toast } from "react-toastify";
 
 
 const useStyle = makeStyles((theme) => ({
@@ -161,7 +160,7 @@ const useStyle = makeStyles((theme) => ({
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
-const Signup = ({ setAuth }) => {
+const Signup = (props) => {
 
 	const classes = useStyle();
 	
