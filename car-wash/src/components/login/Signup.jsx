@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Typography, makeStyles, Button, Box, TextField, Checkbox} from '@material-ui/core'; 
 import login from '../images/login.png'
 import { Link, useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 
 const useStyle = makeStyles((theme) => ({
@@ -161,8 +162,10 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
 const Signup = (props) => {
-
+	
+	
 	const classes = useStyle();
+	
 	
 	
 	
@@ -230,5 +233,6 @@ const Signup = (props) => {
 		</>
 	)
 }
+
 
 export default Signup;
